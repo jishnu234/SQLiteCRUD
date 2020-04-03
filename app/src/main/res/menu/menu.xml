@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/edit"
+        android:title="Edit"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="always">
+        <menu>
+            <item android:title="Update"
+                android:id="@+id/update"
+                />
+            <item android:id="@+id/delete"
+                android:title="delete"/>
+            <item android:id="@+id/deleteAll"
+                android:title="deleteAll"/>
+        </menu>
+    </item>
+
+</menu>
