@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:hint="Select your email"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="10dp"
+        android:id="@+id/choose_email"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/choose_email"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ok"
+
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/choose_email"
+        android:id="@+id/choose_button"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="cancel"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/choose_email"
+            android:id="@+id/cancel_button"/>
+</LinearLayout>
+
+
+</RelativeLayout>

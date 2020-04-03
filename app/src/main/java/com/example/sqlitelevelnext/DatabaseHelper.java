@@ -5,9 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -71,6 +74,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase database=getReadableDatabase();
         Cursor cursor=database.rawQuery("select * from "+Table,null);
+
         return cursor;
+
+    }
+
+    public void updateData(UserData data, String email) {
+
+        SQLiteDatabase database=getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(column1,data.getId());
+        contentValues.put(column2,data.getName());
+        contentValues.put(column3,data.getPhone());
+
+        database.update(Table,contentValues,column4+" =?",new String[]{email});
+
+    }
+
+    public void delete(String email) {
+
+        SQLiteDatabase database=getWritableDatabase();
+        database.delete(Table,column4+"='"+email+"'",null);
+
+    }
+
+    public void deleteAll() {
+
+        SQLiteDatabase database=getWritableDatabase();
+        database.delete(Table,null,null);
+
     }
 }

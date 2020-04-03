@@ -14,6 +14,7 @@ import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -220,8 +221,15 @@ public class MainActivity extends AppCompatActivity {
     }
     public void ViewDataBase()
     {
-            Intent intent=new Intent(MainActivity.this, SecondActivity.class);
+        Cursor cursor=new DatabaseHelper(this).getData();
+        if(cursor.getCount()==0)
+        {
+            Toast.makeText(this, "Database is empty", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
+        }
     }
 
     @Override

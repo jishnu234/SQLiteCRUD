@@ -35,11 +35,15 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         >
         <EditText
             android:layout_width="match_parent"
@@ -99,4 +103,5 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/background"/>
     </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
